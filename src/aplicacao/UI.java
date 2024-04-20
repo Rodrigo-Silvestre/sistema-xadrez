@@ -1,6 +1,7 @@
 package aplicacao;
 
 import util.Constante;
+import xadrez.Cor;
 import xadrez.PecaXadrez;
 
 public class UI {
@@ -21,7 +22,12 @@ public class UI {
             System.out.print("-");
         }
         else {
-            System.out.print(peca);
+            if (peca.getCor() == Cor.WHITE) {
+                System.out.print(Constante.ANSI_WHITE + peca + Constante.ANSI_RESET);
+            }
+            else {
+                System.out.print(Constante.ANSI_YELLOW + peca + Constante.ANSI_RESET);
+            }
         }
         System.out.print(" ");
     }
