@@ -3,8 +3,24 @@ package aplicacao;
 import util.Constante;
 import xadrez.Cor;
 import xadrez.PecaXadrez;
+import xadrez.PosicaoXadrez;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class UI {
+
+    public static PosicaoXadrez leiaPosicaoXadrez(Scanner scanner) {
+        try {
+            String s = scanner.nextLine();
+            char coluna = s.charAt(0);
+            int linha = Integer.parseInt(s.substring(1));
+            return new PosicaoXadrez(coluna, linha);
+        }
+        catch (RuntimeException e) {
+            throw new InputMismatchException("Erro ao ler PosicaoXadrez. Os valores válidos são de a1 a h8.");
+        }
+    }
 
     public static void imprimirTabuleiro(PecaXadrez[][] pecas) {
         for (int i = 0; i < pecas.length; i++) {
