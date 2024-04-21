@@ -10,7 +10,7 @@ public class Tabuleiro {
 
     public Tabuleiro(int linhas, int colunas) {
         if (linhas < 1 || colunas < 1) {
-            throw new TabuleiroException("Erro ao criar o tabuleiro: deve haver pelo menos 1 linha e 1 coluna");
+            throw new TabuleiroException("Erro ao criar o tabuleiro: deve haver pelo menos 1 linha e 1 coluna.");
         }
         this.linhas = linhas;
         this.colunas = colunas;
@@ -27,20 +27,20 @@ public class Tabuleiro {
 
     public Peca peca(int linha, int coluna) {
         if (!posicaoExistente(linha, coluna)) {
-            throw new TabuleiroException("Posição inexistente");
+            throw new TabuleiroException("Posição inexistente.");
         }
         return pecas[linha][coluna];
     }
     public Peca peca(Posicao posicao) {
         if (!posicaoExistente(posicao)) {
-            throw new TabuleiroException("Posição inexistente");
+            throw new TabuleiroException("Posição inexistente.");
         }
         return pecas[posicao.getLinha()][posicao.getColuna()];
     }
 
     public void lugarPeca(Peca peca, Posicao posicao) {
         if (temPeca(posicao)) {
-            throw new TabuleiroException("Já existe uma peça na posição " + posicao);
+            throw new TabuleiroException("Já existe uma peça na posição " + posicao + ".");
         }
         pecas[posicao.getLinha()][posicao.getColuna()] = peca;
         peca.posicao = posicao;
@@ -48,7 +48,7 @@ public class Tabuleiro {
 
     public Peca removerPeca(Posicao posicao) {
         if (!posicaoExistente(posicao)) {
-            throw new TabuleiroException("Posição inexistente");
+            throw new TabuleiroException("Posição inexistente.");
         }
         if (peca(posicao) == null) {
             return null;
@@ -69,7 +69,7 @@ public class Tabuleiro {
 
     public boolean temPeca(Posicao posicao) {
         if (!posicaoExistente(posicao)) {
-            throw new TabuleiroException("Posição inexistente");
+            throw new TabuleiroException("Posição inexistente.");
         }
         return peca(posicao) != null;
     }
