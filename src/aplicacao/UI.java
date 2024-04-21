@@ -31,16 +31,30 @@ public class UI {
         for (int i = 0; i < pecas.length; i++) {
             System.out.print((Constante.TAMANHO_TABULEIRO - i) + " ");
             for (int j = 0; j < pecas.length; j++) {
-                imprimirPeca(pecas[i][j]);
+                imprimirPeca(pecas[i][j], false);
             }
             System.out.println();
         }
         System.out.print("  a b c d e f g h");
     }
 
-    private static void imprimirPeca(PecaXadrez peca) {
+    public static void imprimirTabuleiro(PecaXadrez[][] pecas, boolean[][] possiveisMovimentos) {
+        for (int i = 0; i < pecas.length; i++) {
+            System.out.print((Constante.TAMANHO_TABULEIRO - i) + " ");
+            for (int j = 0; j < pecas.length; j++) {
+                imprimirPeca(pecas[i][j], possiveisMovimentos[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.print("  a b c d e f g h");
+    }
+
+    private static void imprimirPeca(PecaXadrez peca, boolean fundo) {
+        if (fundo) {
+            System.out.print(Constante.ANSI_BLUE_BACKGROUND);
+        }
         if (peca == null) {
-            System.out.print("-");
+            System.out.print("-" + Constante.ANSI_RESET);
         }
         else {
             if (peca.getCor() == Cor.WHITE) {
