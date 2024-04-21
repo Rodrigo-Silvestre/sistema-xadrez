@@ -10,6 +10,11 @@ import java.util.Scanner;
 
 public class UI {
 
+    public static void limparTela() {
+        System.out.println("\033[H\033[2J");
+        System.out.flush();
+    }
+
     public static PosicaoXadrez leiaPosicaoXadrez(Scanner scanner) {
         try {
             String s = scanner.nextLine();
