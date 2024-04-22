@@ -2,6 +2,7 @@ package aplicacao;
 
 import util.Constante;
 import xadrez.Cor;
+import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
 
@@ -25,6 +26,13 @@ public class UI {
         catch (RuntimeException e) {
             throw new InputMismatchException("Erro ao ler PosicaoXadrez. Os valores válidos são de a1 a h8.");
         }
+    }
+
+    public static void imprimirPartida(PartidaXadrez partidaXadrez) {
+        imprimirTabuleiro(partidaXadrez.getPecas());
+        System.out.println();
+        System.out.println("Turno: " + partidaXadrez.getTurno());
+        System.out.println("Jogador esperando: " + partidaXadrez.getJogadorAtual());
     }
 
     public static void imprimirTabuleiro(PecaXadrez[][] pecas) {
@@ -57,7 +65,7 @@ public class UI {
             System.out.print("-" + Constante.ANSI_RESET);
         }
         else {
-            if (peca.getCor() == Cor.WHITE) {
+            if (peca.getCor() == Cor.BRANCO) {
                 System.out.print(Constante.ANSI_WHITE + peca + Constante.ANSI_RESET);
             }
             else {
