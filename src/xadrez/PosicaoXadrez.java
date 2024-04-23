@@ -30,7 +30,7 @@ public class PosicaoXadrez {
     }
 
     protected static PosicaoXadrez daPosicao(Posicao posicao) {
-        return new PosicaoXadrez((char) ('a' - posicao.getColuna()), Constante.TAMANHO_TABULEIRO - posicao.getLinha());
+        return new PosicaoXadrez((char) ('a' + posicao.getColuna()), Constante.TAMANHO_TABULEIRO - posicao.getLinha());
     }
 
     @Override
