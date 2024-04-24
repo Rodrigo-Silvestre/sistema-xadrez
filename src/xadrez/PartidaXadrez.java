@@ -2,6 +2,7 @@ package xadrez;
 
 import jogoTabuleiro.*;
 import util.Constante;
+import xadrez.pecas.Bispo;
 import xadrez.pecas.Peao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
@@ -182,7 +183,9 @@ public class PartidaXadrez {
 
     private void configuracaoInicial() {
         lugarNovaPeca('a', 1, new Torre(tabuleiro, Cor.BRANCO));
+        lugarNovaPeca('c', 1, new Bispo(tabuleiro, Cor.BRANCO));
         lugarNovaPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+        lugarNovaPeca('f', 1, new Bispo(tabuleiro, Cor.BRANCO));
         lugarNovaPeca('h', 1, new Torre(tabuleiro, Cor.BRANCO));
         lugarNovaPeca('a', 2, new Peao(tabuleiro, Cor.BRANCO));
         lugarNovaPeca('b', 2, new Peao(tabuleiro, Cor.BRANCO));
@@ -194,7 +197,9 @@ public class PartidaXadrez {
         lugarNovaPeca('h', 2, new Peao(tabuleiro, Cor.BRANCO));
 
         lugarNovaPeca('a', 8, new Torre(tabuleiro, Cor.PRETO));
+        lugarNovaPeca('c', 8, new Bispo(tabuleiro, Cor.PRETO));
         lugarNovaPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
+        lugarNovaPeca('f', 8, new Bispo(tabuleiro, Cor.PRETO));
         lugarNovaPeca('h', 8, new Torre(tabuleiro, Cor.PRETO));
         lugarNovaPeca('a', 7, new Peao(tabuleiro, Cor.PRETO));
         lugarNovaPeca('b', 7, new Peao(tabuleiro, Cor.PRETO));
